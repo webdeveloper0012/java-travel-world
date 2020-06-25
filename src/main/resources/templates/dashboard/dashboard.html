@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<HTML xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+      layout:decorate="~{base}">
+<div layout:fragment="page_content" id="search_content">
+Welcome <span sec:authentication="name">USER</span>, Dashboard.
+<ul>
+    <li><a href="#">Find Post</a></li>
+    <li><a href="/posts/list">list</a></li>
+    <li><a href="/posts/addPost">Post a Status</a></li>
+</ul>
+    <form name="footerLogout" th:action="@{/logout}" method="POST" th:hidden="true">
+        <input type="submit" value="Logout"/>
+    </form>
+</div>
+</HTML>
